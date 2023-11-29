@@ -57,13 +57,13 @@ public class PersonalController implements Initializable {
 	private void onPersonalChange(ObservableValue<? extends Personal> o, Personal ov, Personal nv) {
 		
 		if (ov != null) {
-			nombreText.textProperty().unbind();
-			apellidosText.textProperty().unbind();
+			nombreText.textProperty().unbindBidirectional(ov.nombreProperty());
+			apellidosText.textProperty().unbindBidirectional(ov.apellidosProperty());
 		}
 		
 		if (nv != null) {
-			nombreText.textProperty().bind(nv.nombreProperty());
-			apellidosText.textProperty().bind(nv.apellidosProperty());
+			nombreText.textProperty().bindBidirectional(nv.nombreProperty());
+			apellidosText.textProperty().bindBidirectional(nv.apellidosProperty());
 		}
 		
 	}
