@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import dad.micv.model.CV;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,6 +23,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 
 public class MainController implements Initializable {
+	
+	// controllers
+	
+	private PersonalController personalController = new PersonalController();
 	
 	// model
 	
@@ -60,16 +65,16 @@ public class MainController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+
+		personalTab.setContent(personalController.getView());
 		
-		cv.addListener((o, ov, nv) -> {
-			System.out.println(nv.getPersonal().getNombre());
-		});
+		
+		cv.addListener(this::onCVChanged);
 		
 		cv.set(new CV());
 
 	}
-	
+
 	public BorderPane getView() {
 		return view;
 	}
@@ -146,13 +151,16 @@ public class MainController implements Initializable {
     	}
     }
 
+	private void onCVChanged(ObservableValue<? extends CV> o, CV ov, CV nv) {
+		
+		if (ov != null) {
+			personalController.personalProperty().unbind();
+		}
+		
+		if (nv != null) {
+			personalController.personalProperty().bind(cv.get().personalProperty());
+		}
+		
+	}
+    
 }
-
-
-
-
-
-
-
-
-
