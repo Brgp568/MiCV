@@ -1,0 +1,33 @@
+{
+  "personal": {
+    "identificacion": "12345678Z",
+    "nombre": "Chuck",
+    "apellidos": "Norris",
+    "fechaNacimiento": {
+      "year": 1945,
+      "month": 10,
+      "day": 25
+    },
+    "direccion": null,
+    "codigoPostal": null,
+    "localidad": null,
+    "pais": null,
+    "nacionalidades": [
+      {
+        "denominacion": "estadounidense"
+      },
+      {
+        "denominacion": "mexicana"
+      }
+    ]
+  },
+  "contacto": {
+    "telefonos": [
+      {
+        "numero": "922102030",
+        "tipo": "DOMICILIO"
+      }
+    ]
+  },
+  "habilidades": []
+}
