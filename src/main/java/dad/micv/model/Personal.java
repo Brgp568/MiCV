@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -22,6 +23,12 @@ public class Personal {
 	private StringProperty localidad = new SimpleStringProperty();
 	private StringProperty pais = new SimpleStringProperty();
 	private ListProperty<Nacionalidad> nacionalidades = new SimpleListProperty<Nacionalidad>(FXCollections.observableArrayList());
+
+	private transient ReadOnlyStringWrapper nombreCompleto = new ReadOnlyStringWrapper();
+
+	public Personal() {
+		nombreCompleto.bind(nombre.concat(" ").concat(apellidos));
+	}
 
 	public final StringProperty identificacionProperty() {
 		return this.identificacion;
@@ -129,6 +136,16 @@ public class Personal {
 
 	public final void setNacionalidades(final ObservableList<Nacionalidad> nacionalidades) {
 		this.nacionalidadesProperty().set(nacionalidades);
+	}
+	
+	// ----------------------
+
+	public final javafx.beans.property.ReadOnlyStringProperty nombreCompletoProperty() {
+		return this.nombreCompleto.getReadOnlyProperty();
+	}
+
+	public final String getNombreCompleto() {
+		return this.nombreCompletoProperty().get();
 	}
 
 }

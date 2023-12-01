@@ -14,9 +14,6 @@
     "pais": null,
     "nacionalidades": [
       {
-        "denominacion": "estadounidense"
-      },
-      {
         "denominacion": "mexicana"
       }
     ]
@@ -26,6 +23,11 @@
       {
         "numero": "922102030",
         "tipo": "DOMICILIO"
+      }
+    ]
+  },
+  "habilidades": []
+}ipo": "DOMICILIO"
       }
     ]
   },

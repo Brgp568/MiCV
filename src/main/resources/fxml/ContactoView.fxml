@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<SplitPane dividerPositions="0.33, 0.66" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
+   <items>
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="Teléfonos">
+         <content>
+            <BorderPane />
+         </content>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" maxHeight="1.7976931348623157E308" text="Direcciones de correo">
+         <content>
+            <BorderPane />
+         </content>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TitledPane>
+      <TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" text="Webs">
+         <content>
+            <BorderPane />
+         </content>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </TitledPane>
+   </items>
+</SplitPane>
