@@ -40,5 +40,10 @@ public class Telefono {
 	public final void setTipo(final TipoTelefono tipo) {
 		this.tipoProperty().set(tipo);
 	}
+	
+	@Override
+	public String toString() {
+		return "Telefono [" + getNumero() + ", " + getTipo() + "]";
+	}
 
 }
